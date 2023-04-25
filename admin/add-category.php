@@ -41,7 +41,7 @@ require "../connection.php";
                         <div class="alert alert-success mb-3" role="alert">
                             Category berhasil disimpan
                         </div>
-                        <meta http-equiv="refresh" content="2; url=./category.php" />
+                        <meta http-equiv="refresh" content="2; url=./category.php?page=1" />
             <?php
                     } else {
                         echo mysqli_error($con);

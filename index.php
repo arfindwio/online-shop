@@ -106,6 +106,10 @@ $queryProduct = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM pr
 
     <script src="./bootstrap/js/bootstrap.bundle.js"></script>
     <script src="./fontawesome/js/all.min.js"></script>
+    <script>
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
 </body>
 
 </html>

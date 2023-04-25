@@ -3,7 +3,15 @@ require "./session.php";
 require "../connection.php";
 
 $queryCategory = mysqli_query($con, "SELECT * FROM category");
-$jumlahCategory = mysqli_num_rows($queryCategory);
+$countCategory = mysqli_num_rows($queryCategory);
+
+// pagination
+$jumlahDataPerHalaman = 10;
+$jumlahHalaman = ceil($countCategory / $jumlahDataPerHalaman);
+$halamanAktif = (isset($_GET['page'])) ? $_GET['page'] : 1;
+$awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
+$queryCategoryNew = mysqli_query($con, "SELECT * FROM category LIMIT $awalData, $jumlahDataPerHalaman");
+
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +47,7 @@ $jumlahCategory = mysqli_num_rows($queryCategory);
             <a href="./add-category.php" class="btn btn-primary mt-3 mb-2">Add Category</a>
             <div class="table-responsive mt-3">
                 <table class="table">
-                    <thead>
+                    <thead class="table-secondary">
                         <tr>
                             <th>No.</th>
                             <th>Name</th>
@@ -48,7 +56,7 @@ $jumlahCategory = mysqli_num_rows($queryCategory);
                     </thead>
                     <tbody>
                         <?php
-                        if ($jumlahCategory === 0) {
+                        if ($countCategory < 1) {
                         ?>
                             <tr>
                                 <td colspan="3" class="text-center">Data category tidak tersedia</td>
@@ -56,13 +64,13 @@ $jumlahCategory = mysqli_num_rows($queryCategory);
                             <?php
                         } else {
                             $number = 1;
-                            foreach ($queryCategory as $dataCatagory) {
+                            foreach ($queryCategoryNew as $dataCatagory) {
                             ?>
                                 <tr>
-                                    <td><?php echo $number; ?></td>
+                                    <td><?php if ($_GET['page'] >= 2) { ?><?php echo $number + 10; ?><?php } else { ?> <?php echo $number; ?><?php } ?></td>
                                     <td><?php echo $dataCatagory['nama']; ?></td>
                                     <td>
-                                        <a href="./category-detail.php?id=<?php echo $dataCatagory['id']; ?>" class="btn btn-info"><i class="fas fa-search"></i></a>
+                                        <a href="./category-detail.php?id=<?php echo $dataCatagory['id']; ?>" class="btn btn-info px-2"><i class="fa-solid fa-circle-info fa-xl"></i></a>
                                     </td>
                                 </tr>
                         <?php
@@ -75,6 +83,26 @@ $jumlahCategory = mysqli_num_rows($queryCategory);
             </div>
         </div>
     </div>
+
+    <!-- Pagination Section Start -->
+    <div class="text-center mb-4" <?php if ($countCategory < 1) : ?>Hidden<?php endif; ?>>
+        <?php if ($halamanAktif > 1) : ?>
+            <a href="./category.php?page=<?php echo $halamanAktif - 1; ?>" class="text-decoration-none text-dark fs-2">&laquo;</a>
+        <?php endif; ?>
+
+        <?php for ($i = 1; $i <= $jumlahHalaman; $i++) : ?>
+            <?php if ($i == $halamanAktif) : ?>
+                <a href="./category.php?page=<?php echo $i; ?>" class="text-decoration-none text-light fw-bolder fs-5" style="padding: 3px 10px; background-color: blue; border: 1px solid black;"><?php echo $i; ?></a>
+            <?php else : ?>
+                <a href="./category.php?page=<?php echo $i; ?>" class="text-decoration-none text-dark fw-bolder fs-5" style="padding: 3px 10px; background-color: white; border: 1px solid black;"><?php echo $i; ?></a>
+            <?php endif; ?>
+        <?php endfor; ?>
+
+        <?php if ($halamanAktif < $jumlahHalaman) : ?>
+            <a href="./category.php?page=<?php echo $halamanAktif + 1; ?>" class="text-decoration-none text-dark fs-2">&raquo;</a>
+        <?php endif; ?>
+    </div>
+    <!-- Pagination Section End -->
 
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../fontawesome/js/all.min.js"></script>

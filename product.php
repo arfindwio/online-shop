@@ -65,13 +65,21 @@ $jumlahHalamanNew = ceil($countDataNew / $jumlahDataPerHalaman);
     <!-- Body Section Start -->
     <div class="container py-5">
         <div class="row">
+            <!-- Category Section Start -->
             <div class="col-lg-3 mb-4 mt-lg-4">
                 <div class="card card-body shadow">
                     <h3 class="mb-3 fw-bold">Category</h3>
                     <div style="height: 26vh; overflow: auto;">
                         <div class="list-group">
                             <?php foreach ($queryCategory as $dataCategory) { ?>
-                                <a href="./product.php?category=<?php echo $dataCategory['nama']; ?>" class="text-decoration-none list-group-item list-group-item-action border-0">
+                                <a href="./product.php?category=<?php echo $dataCategory['nama']; ?>" class="text-decoration-none list-group-item list-group-item-action border-0
+                                <?php if (isset($_GET['category'])) { ?>
+                                    <?php if ($_GET['category'] === $dataCategory['nama']) : ?>
+                                        bg-dark-subtle rounded-1
+                                    <?php endif; ?>
+                                <?php } else { ?>
+                                    bg-white
+                                <?php } ?>">
                                     <?php echo $dataCategory['nama']; ?>
                                 </a>
                             <?php } ?>
@@ -79,6 +87,9 @@ $jumlahHalamanNew = ceil($countDataNew / $jumlahDataPerHalaman);
                     </div>
                 </div>
             </div>
+            <!-- Category Section End -->
+
+            <!-- Product Section Start -->
             <div class="col-lg-9">
                 <h3 class="text-center mb-3 fw-bold">Product</h3>
 
@@ -123,6 +134,7 @@ $jumlahHalamanNew = ceil($countDataNew / $jumlahDataPerHalaman);
                     <?php } ?>
                 </div>
             </div>
+            <!-- Product Section Start -->
         </div>
     </div>
     <!-- Body Section ENd -->
@@ -221,6 +233,9 @@ $jumlahHalamanNew = ceil($countDataNew / $jumlahDataPerHalaman);
                 }
             }
         }
+
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
     </script>
 </body>
 

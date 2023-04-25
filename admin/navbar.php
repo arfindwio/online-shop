@@ -10,10 +10,10 @@
                     <a class="nav-link text-light fs-5" href="../admin">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light fs-5" href="./category.php">Category</a>
+                    <a class="nav-link text-light fs-5" href="./category.php?page=1">Category</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light fs-5" href="./product.php">Product</a>
+                    <a class="nav-link text-light fs-5" href="./product.php?page=1">Product</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link fs-5" href="./logout.php">Logout</a>
