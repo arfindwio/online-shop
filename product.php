@@ -33,7 +33,10 @@ if (isset($_GET['keyword'])) {
     $queryProductNew = mysqli_query($con, "SELECT * FROM product LIMIT $awalData, $jumlahDataPerHalaman");
 }
 
+// untuk menghitung data sesuai category, search, sort jikalau tidak ada maka muncul tulisan tidak ditemukan data dan pagination hanya keluar 1
 $countDataNew = mysqli_num_rows($queryProduct);
+
+// Untuk menghitung halaman sesuai category, search, sort
 $jumlahHalamanNew = ceil($countDataNew / $jumlahDataPerHalaman);
 
 ?>
@@ -55,7 +58,7 @@ $jumlahHalamanNew = ceil($countDataNew / $jumlahDataPerHalaman);
     <?php require "./navbar.php"; ?>
 
     <!-- Banner Product Section Start -->
-    <div class="container-fluid d-flex align-items-center" style="height: 40vh; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./image/banner-product.jpg'); background-size: cover; background-position: center; margin-top: 70px;">
+    <div class="container-fluid d-flex align-items-center" style="height: 40vh; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./image/banner-product.jpg'); background-size: cover; background-position: center; margin-top: 50px;">
         <div class="container text-white text-center">
             <h1>Product</h1>
         </div>
@@ -93,8 +96,9 @@ $jumlahHalamanNew = ceil($countDataNew / $jumlahDataPerHalaman);
             <div class="col-lg-9">
                 <h3 class="text-center mb-3 fw-bold">Product</h3>
 
-                <div class="dropdown">
-                    <div class="float-end d-flex align-items-center">
+                <!-- Dropdown Section Start -->
+                <div class="dropdown float-end">
+                    <div class="d-flex align-items-center">
                         <p class="fw-bolder me-3 fs-5">Urutkan</p>
                         <?php if (isset($_GET['sort'])) { ?>
                             <button onclick="myFunction()" class="dropbtn shadow-lg mb-2 text-dark" style="padding: 5px 15px; border: 1px solid; border-radius: 5px; background-color: white;">
@@ -111,23 +115,21 @@ $jumlahHalamanNew = ceil($countDataNew / $jumlahDataPerHalaman);
                         <a href="./product.php?sort=Expensive">Expensive</a>
                     </div>
                 </div>
-                <div class="row float-end">
-                    <?php
-                    if ($countDataNew < 1) {
-                    ?>
+                <!-- Dropdown Section End -->
+
+                <div class="row d-flex justify-content-center" style="clear: right">
+                    <?php if ($countDataNew < 0) { ?>
                         <h4 class="mt-5" style="margin-right: 10vh;">Product yang anda cari tidak ada</h4>
-                    <?php
-                    }
-                    ?>
-                    <?php foreach ($queryProduct as $dataProduct) { ?>
-                        <div class="col-md-4 mb-3">
+                    <?php } ?>
+                    <?php foreach ($queryProductNew as $dataProduct) { ?>
+                        <div class="col-6 col-md-4 mb-3">
                             <div class="card">
-                                <img src="./image/<?php echo $dataProduct['foto']; ?>" class="card-img-top" alt="Product Photo" style="height: 15rem; object-fit: cover;">
+                                <img src="./image/<?php echo $dataProduct['foto']; ?>" class="card-img-top card-img-product" alt="Product Photo" style="height: 15rem; object-fit: cover;">
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $dataProduct['nama']; ?></h5>
-                                    <p class="card-text" style="display: -webkit-box;-webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;"><?php echo $dataProduct['detail']; ?>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni reiciendis officiis quam quisquam quos dolore laborum, repellat aliquid velit debitis dolor, aspernatur temporibus voluptatum minus facere quas totam amet obcaecati!</p>
-                                    <p class="card-text fs-4 fw-bolder">Rp. <?php echo $dataProduct['harga']; ?></p>
-                                    <a href="./product-detail.php?nama=<?php echo $dataProduct['nama']; ?>" class="btn btn-primary">Lihat Detail</a>
+                                    <p class="card-text" style="display: -webkit-box;-webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;"><?php echo htmlspecialchars_decode($dataProduct['detail']); ?></p>
+                                    <p class="card-text fs-4 fw-bolder text-center">Rp. <?php echo $dataProduct['harga']; ?></p>
+                                    <a href="./product-detail.php?nama=<?php echo $dataProduct['nama']; ?>" class="btn btn-primary d-flex justify-content-center">Lihat Detail</a>
                                 </div>
                             </div>
                         </div>
@@ -140,7 +142,7 @@ $jumlahHalamanNew = ceil($countDataNew / $jumlahDataPerHalaman);
     <!-- Body Section ENd -->
 
     <!-- Pagination Section Start -->
-    <div class="text-center mb-4" <?php if ($countDataNew < 1) : ?>Hidden<?php endif; ?>>
+    <div class="text-center mb-4" <?php if ($jumlahHalamanNew < 2) : ?>Hidden<?php endif; ?>>
         <?php if (isset($_GET['keyword'])) { ?>
             <?php if ($halamanAktif > 1) : ?>
                 <a href="./product.php?keyword=<?php echo $_GET['keyword']; ?>&page=<?php echo $halamanAktif - 1; ?>" class="text-decoration-none text-dark fs-2">&laquo;</a>
@@ -215,28 +217,8 @@ $jumlahHalamanNew = ceil($countDataNew / $jumlahDataPerHalaman);
 
     <script src="./bootstrap/js/bootstrap.bundle.js"></script>
     <script src="./fontawesome/js/all.min.js"></script>
-    <script>
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-
-        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
-    </script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/37.1.0/classic/ckeditor.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

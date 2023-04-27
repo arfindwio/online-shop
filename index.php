@@ -13,18 +13,19 @@ $queryProduct = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM pr
     <title>Home</title>
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
     <?php require "./navbar.php"; ?>
 
     <!-- banner Section Start -->
-    <div class="container-fluid d-flex align-items-center" style="height: 80vh; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./image/banner.jpg'); background-size: cover; margin-top: 8vh;">
+    <div class="container-fluid d-flex align-items-center" style="height: 80vh; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./image/banner.jpg'); background-size: cover; margin-top: 50px;">
         <div class="container text-white text-center">
             <h1>Online Clothing Store</h1>
             <div class="col-md-8 offset-md-2">
                 <form action="product.php" method="GET">
-                    <div class="input-group input-group-lg my-4">
+                    <div class="input-group input-group-banner my-4">
                         <input type="text" class="form-control" placeholder="Search Product" aria-label="Search Product" aria-describedby="basic-addon2" name="keyword" autocomplete="off">
                         <button type="submit" class="btn btn-primary">Search</button>
                     </div>
@@ -68,8 +69,8 @@ $queryProduct = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM pr
     <!-- Abous Us -->
     <div class="container-fluid py-5" style="background-color: #494848;">
         <div class="container text-center">
-            <h3 class="text-light fw-bold">Abous Us</h3>
-            <p class="text-white-50 fs-5 mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur sit neque corporis repellat quas nostrum voluptatibus dicta sed minus mollitia unde soluta magni accusantium, iure, itaque veritatis. Ab, hic nisi voluptate error minima recusandae porro impedit laboriosam suscipit eum quis voluptatem quibusdam natus praesentium quae doloribus nam dicta. Repellendus, sapiente!</p>
+            <h3 class="text-light fw-bold">About Us</h3>
+            <p class="text-about-us text-white-50 mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur sit neque corporis repellat quas nostrum voluptatibus dicta sed minus mollitia unde soluta magni accusantium, iure, itaque veritatis. Ab, hic nisi voluptate error minima recusandae porro impedit laboriosam suscipit eum quis voluptatem quibusdam natus praesentium quae doloribus nam dicta. Repellendus, sapiente!</p>
 
         </div>
     </div>
@@ -83,33 +84,30 @@ $queryProduct = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM pr
                 <?php foreach ($queryProduct as $dataProduct) { ?>
                     <div class="col-sm-6 col-md-4 mb-3">
                         <div class="card">
-                            <img src="./image/<?php echo $dataProduct['foto'] ?>" class="card-img-top" alt="Product Photo" style="height: 15rem; object-fit: cover;">
+                            <img src="./image/<?php echo $dataProduct['foto'] ?>" class="card-img-top card-img-product" alt="Product Photo" style="height: 15rem; object-fit: cover;">
                             <div class="card-body">
-                                <h5 class="card-title fw-bolder"><?php echo $dataProduct['nama'] ?></h5>
+                                <h4 class="card-title fw-bolder"><?php echo $dataProduct['nama'] ?></h4>
                                 <p class="card-text" style="display: -webkit-box;-webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;"><?php echo $dataProduct['detail'] ?>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus at eius amet quis ea quam cupiditate quasi enim provident. Itaque odio consequuntur ipsum esse sint, possimus fugiat recusandae quae nam.</p>
-                                <p class="card-text fs-4 fw-semibold">Rp. <?php echo $dataProduct['harga'] ?></p>
-                                <a href="./product-detail.php?nama=<?php echo $dataProduct['nama'] ?>" class="btn btn-primary">Lihat Detail</a>
+                                <p class="card-text fs-4 fw-semibold text-center">Rp. <?php echo $dataProduct['harga'] ?></p>
+                                <a href="./product-detail.php?nama=<?php echo $dataProduct['nama'] ?>" class="btn btn-primary d-flex justify-content-center"">Lihat Detail</a>
                             </div>
                         </div>
                     </div>
                 <?php } ?>
             </div>
-            <div class="d-flex justify-content-center">
-                <a href="./product.php" class="btn btn-outline-primary mt-3 text-center">See More</a>
-            </div>
-        </div>
-    </div>
+            <div class=" d-flex justify-content-center">
+                                    <a href="./product.php" class="btn btn-outline-primary mt-3 text-center">See More</a>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- Footer Section Start -->
-    <?php require "./footer.php"; ?>
-    <!-- Footer Section End -->
+                    <!-- Footer Section Start -->
+                    <?php require "./footer.php"; ?>
+                    <!-- Footer Section End -->
 
-    <script src="./bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="./fontawesome/js/all.min.js"></script>
-    <script>
-        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
-    </script>
+                    <script src="./bootstrap/js/bootstrap.bundle.js"></script>
+                    <script src="./fontawesome/js/all.min.js"></script>
+                    <script src="./js/script.js"></script>
 </body>
 
 </html>

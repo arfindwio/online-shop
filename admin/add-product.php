@@ -128,6 +128,9 @@ $queryCategory = mysqli_query($con, "SELECT * FROM category");
     </div>
 
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/37.1.0/classic/ckeditor.js"></script>
+    <script src="../js/script.js"></script>
+
 </body>
 
 </html>

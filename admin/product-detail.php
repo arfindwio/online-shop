@@ -150,7 +150,7 @@ $queryCategory = mysqli_query($con, "SELECT * FROM category WHERE id!='$data[kat
                 <div class="mb-2">
                     <label for="detail">Detail</label>
                     <textarea name="detail" id="detail" cols="30" rows="10" class="form-control">
-                        <?php echo $data['detail']; ?>
+                        <?php echo htmlspecialchars_decode($data['detail']); ?>
                     </textarea>
                 </div>
                 <div class="mb-2">
@@ -179,6 +179,8 @@ $queryCategory = mysqli_query($con, "SELECT * FROM category WHERE id!='$data[kat
     </div>
 
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/37.1.0/classic/ckeditor.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

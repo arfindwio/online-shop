@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 fixed-top">
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark p-2 fixed-top">
     <div class="container">
         <a href="./" class="text-decoration-none text-light fw-bold fs-2"><i class="fa-solid fa-ghost me-3"></i>Arfin Store</a>
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +10,7 @@
                     <a class="nav-link text-light fs-5" href="./">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light fs-5" href="./category.php">Category</a>
+                    <a class="nav-link text-light fs-5" href="./about-us.php">About Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light fs-5" href="./product.php">Product</a>

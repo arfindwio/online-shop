@@ -18,7 +18,7 @@
   min-width: 120px;
   z-index: 1;
   right: 0;
-  margin-top: 40px;
+  top: 6vh;
   border-radius: 10px;
   overflow: Hidden;
 }
@@ -39,4 +39,38 @@
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
   display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  .input-group-lg {
+    height: 50px !important;
+  }
+
+  .card-img-product {
+    height: 10rem !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .btn-fixed-wa {
+    width: 7vh !important;
+    height: 7vh !important;
+  }
+
+  .fa-whatsapp {
+    font-size: 5vh !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .input-group-banner {
+    height: 6vh !important;
+  }
+  .input-group-banner input::placeholder {
+    font-size: 20px !important;
+  }
+
+  .text-about-us {
+    font-size: 20px !important;
+  }
 }

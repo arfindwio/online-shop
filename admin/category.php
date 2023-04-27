@@ -67,7 +67,17 @@ $queryCategoryNew = mysqli_query($con, "SELECT * FROM category LIMIT $awalData, 
                             foreach ($queryCategoryNew as $dataCatagory) {
                             ?>
                                 <tr>
-                                    <td><?php if ($_GET['page'] >= 2) { ?><?php echo $number + 10; ?><?php } else { ?> <?php echo $number; ?><?php } ?></td>
+                                    <td>
+                                        <?php if (isset($_GET['page'])) { ?>
+                                            <?php if ($_GET['page'] >= 2) : ?>
+                                                <?php echo (($_GET['page'] - 1) * 10) + $number; ?>
+                                            <?php else : ?>
+                                                <?php echo $number; ?>
+                                            <?php endif; ?>
+                                        <?php } else { ?>
+                                            <?php echo $number; ?>
+                                        <?php } ?>
+                                    </td>
                                     <td><?php echo $dataCatagory['nama']; ?></td>
                                     <td>
                                         <a href="./category-detail.php?id=<?php echo $dataCatagory['id']; ?>" class="btn btn-info px-2"><i class="fa-solid fa-circle-info fa-xl"></i></a>

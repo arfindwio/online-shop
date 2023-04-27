@@ -35,7 +35,7 @@ $queryProductTerkait = mysqli_query($con, "SELECT * FROM product WHERE kategori_
                 <div class="col-lg-6 offset-lg-1">
                     <h1 class="fw-bold"><?php echo $dataProduct['nama']; ?></h1>
                     <p class="fs-3 fw-bolder">Rp. <?php echo $dataProduct['harga']; ?></p>
-                    <p class="fs-5"><?php echo $dataProduct['detail']; ?></p>
+                    <p class="fs-5"><?php echo htmlspecialchars_decode($dataProduct['detail']); ?></p>
                     <p class="fs-5">Stock Availability : <span class="fw-bolder"><?php echo $dataProduct['ketersediaan_stok']; ?></span></p>
                 </div>
             </div>

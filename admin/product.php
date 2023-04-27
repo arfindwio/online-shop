@@ -6,7 +6,7 @@ $query = mysqli_query($con, "SELECT a.*, b.nama AS nama_kategori FROM product a 
 $countProduct = mysqli_num_rows($query);
 
 // pagination
-$jumlahDataPerHalaman = 20;
+$jumlahDataPerHalaman = 10;
 $jumlahHalaman = ceil($countProduct / $jumlahDataPerHalaman);
 $halamanAktif = (isset($_GET['page'])) ? $_GET['page'] : 1;
 $awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
@@ -68,7 +68,17 @@ $queryProduct = mysqli_query($con, "SELECT a.*, b.nama AS nama_kategori FROM pro
                             foreach ($queryProduct as $data) {
                             ?>
                                 <tr>
-                                    <td><?php if (isset($_GET['page']) >= 2) { ?><?php echo $number + 10; ?><?php } else { ?> <?php echo $number; ?><?php } ?></td>
+                                    <td>
+                                        <?php if (isset($_GET['page'])) { ?>
+                                            <?php if ($_GET['page'] >= 2) : ?>
+                                                <?php echo (($_GET['page'] - 1) * 10) + $number; ?>
+                                            <?php else : ?>
+                                                <?php echo $number; ?>
+                                            <?php endif; ?>
+                                        <?php } else { ?>
+                                            <?php echo $number; ?>
+                                        <?php } ?>
+                                    </td>
                                     <td><?php echo $data['nama']; ?></td>
                                     <td><?php echo $data['nama_kategori']; ?></td>
                                     <td><?php echo $data['harga']; ?></td>
