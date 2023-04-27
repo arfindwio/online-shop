@@ -52,10 +52,13 @@ require "../connection.php";
             <form action="" method="POST">
                 <div>
                     <label for="category" class="mb-2">Category</label>
-                    <input type="text" id="category" name="category" placeholder="Masukan Nama Category" class="form-control" autocomplete="off">
+                    <input type="text" id="category" name="category" placeholder="Masukan Nama Category" class="form-control" autocomplete="off" required>
                 </div>
-                <div class="mt-3">
-                    <button class="btn btn-primary" type="submit" name="btn-category">Save</button>
+                <div class="mt-3 d-flex">
+                    <a href="./category.php" class="btn btn-light border border-dark bg-body-secondary">Cancel</a>
+                    <div class="ms-auto">
+                        <button class="btn btn-primary" type="submit" name="btn-category">Save</button>
+                    </div>
                 </div>
             </form>
         </div>

@@ -119,8 +119,11 @@ $queryCategory = mysqli_query($con, "SELECT * FROM category");
                         <option value="Sold Out">Sold Out</option>
                     </select>
                 </div>
-                <div>
-                    <button type="submit" class="btn btn-primary" name="btn-save-product">Save</button>
+                <div class="d-flex">
+                    <a href="./product.php" class="btn btn-light border border-dark bg-body-secondary">Cancel</a>
+                    <div class="ms-auto">
+                        <button type="submit" class="btn btn-primary" name="btn-save-product">Save</button>
+                    </div>
                 </div>
             </form>
         </div>

@@ -50,19 +50,6 @@ $data = mysqli_fetch_array($query);
                 }
             }
             ?>
-        </div>
-        <div class="col-12 col-md-6">
-            <form action="" method="POST">
-                <div>
-                    <label for="category" class="mb-2 fs-5">Category</label>
-                    <input class="form-control" type="text" name="category" id="category" value="<?php echo $data['nama']; ?>">
-                </div>
-
-                <div class="mt-3">
-                    <button type="submit" class="btn btn-primary" name="btn-edit-category">Edit</button>
-                    <button type="submit" class="btn btn-danger" name="btn-delete-category" onclick="return confirm('Anda Yakin Menghapus Category ini')">Delete</button>
-                </div>
-            </form>
             <?php
             if (isset($_POST['btn-edit-category'])) {
                 $category = htmlspecialchars($_POST['category']);
@@ -98,6 +85,23 @@ $data = mysqli_fetch_array($query);
                 }
             }
             ?>
+        </div>
+        <div class="col-12 col-md-6">
+            <form action="" method="POST">
+                <div>
+                    <label for="category" class="mb-2 fs-5">Category</label>
+                    <input class="form-control" type="text" name="category" id="category" value="<?php echo $data['nama']; ?>" required>
+                </div>
+
+                <div class="mt-3 d-flex">
+                    <a href="./category.php" class="btn btn-light border border-dark bg-body-secondary">Cancel</a>
+                    <div class="ms-auto">
+                        <button type="submit" class="btn btn-primary" name="btn-edit-category">Edit</button>
+                        <button type="submit" class="btn btn-danger" name="btn-delete-category" onclick="return confirm('Anda Yakin Menghapus Category ini')">Delete</button>
+                    </div>
+                </div>
+            </form>
+
         </div>
     </div>
 

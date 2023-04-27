@@ -29,11 +29,12 @@ $queryProductTerkait = mysqli_query($con, "SELECT * FROM product WHERE kategori_
     <div class="container-fluid pb-5" style="margin-top: 15vh;">
         <div class="container">
             <div class="row">
+                <h2 class="fw-bold mb-4">Detail Product</h2>
                 <div class="col-lg-5 mb-5">
                     <img src="./image/<?php echo $dataProduct['foto']; ?>" alt="image product" style="width: 60vh; height: 45vh; object-fit: cover;">
                 </div>
                 <div class="col-lg-6 offset-lg-1">
-                    <h1 class="fw-bold"><?php echo $dataProduct['nama']; ?></h1>
+                    <h1 class="fw-semibold"><?php echo $dataProduct['nama']; ?></h1>
                     <p class="fs-3 fw-bolder">Rp. <?php echo $dataProduct['harga']; ?></p>
                     <p class="fs-5"><?php echo htmlspecialchars_decode($dataProduct['detail']); ?></p>
                     <p class="fs-5">Stock Availability : <span class="fw-bolder"><?php echo $dataProduct['ketersediaan_stok']; ?></span></p>

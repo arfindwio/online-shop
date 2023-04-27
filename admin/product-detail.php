@@ -170,9 +170,12 @@ $queryCategory = mysqli_query($con, "SELECT * FROM category WHERE id!='$data[kat
                         ?>
                     </select>
                 </div>
-                <div>
-                    <button type="submit" class="btn btn-primary" name="btn-edit-product">Save</button>
-                    <button type="submit" class="btn btn-danger" name="btn-delete-product" onclick="return confirm('Anda Yakin Menghapus Product ini')">Delete</button>
+                <div class="d-flex">
+                    <a href="./product.php" class="btn btn-light border border-dark bg-body-secondary">Cancel</a>
+                    <div class="ms-auto">
+                        <button type="submit" class="btn btn-primary" name="btn-edit-product">Save</button>
+                        <button type="submit" class="btn btn-danger" name="btn-delete-product" onclick="return confirm('Anda Yakin Menghapus Product ini')">Delete</button>
+                    </div>
                 </div>
             </form>
         </div>

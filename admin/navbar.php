@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark p-2 fixed-top">
     <div class="container">
         <a href="./" class="text-decoration-none text-light fw-bold fs-2"><i class="fa-solid fa-ghost me-3"></i>Arfin Store</a>
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
