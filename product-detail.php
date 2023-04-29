@@ -26,7 +26,7 @@ $queryProductTerkait = mysqli_query($con, "SELECT * FROM product WHERE kategori_
     <!-- Navbar Section End -->
 
     <!-- Detail Product Section Start-->
-    <div class="container-fluid pb-5" style="margin-top: 15vh;">
+    <div class="container-fluid pb-5" style="margin-top: 12vh;">
         <div class="container">
             <div class="row">
                 <h2 class="fw-bold mb-4">Detail Product</h2>

@@ -83,12 +83,14 @@ $queryProduct = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM pr
             <div class="row mt-5">
                 <?php foreach ($queryProduct as $dataProduct) { ?>
                     <div class="col-sm-6 col-md-4 mb-3">
-                        <div class="card">
+                        <div class="card shadow">
                             <img src="./image/<?php echo $dataProduct['foto'] ?>" class="card-img-top card-img-product" alt="Product Photo" style="height: 15rem; object-fit: cover;">
                             <div class="card-body">
-                                <h4 class="card-title fw-bolder"><?php echo $dataProduct['nama'] ?></h4>
-                                <p class="card-text" style="display: -webkit-box;-webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;"><?php echo $dataProduct['detail'] ?>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus at eius amet quis ea quam cupiditate quasi enim provident. Itaque odio consequuntur ipsum esse sint, possimus fugiat recusandae quae nam.</p>
-                                <p class="card-text fs-4 fw-semibold text-center">Rp. <?php echo $dataProduct['harga'] ?></p>
+                                <h4 class="card-title fw-semibold"><?php echo $dataProduct['nama'] ?></h4>
+                                <div class="card-text" style="display: -webkit-box;-webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;margin-top: -15px; opacity: 70%;">
+                                    <p><?php echo htmlspecialchars_decode($dataProduct['detail']); ?></p>
+                                </div>
+                                <p class="card-text fs-4 fw-bolder text-center">Rp. <?php echo $dataProduct['harga'] ?></p>
                                 <a href="./product-detail.php?nama=<?php echo $dataProduct['nama'] ?>" class="btn btn-primary d-flex justify-content-center"">Lihat Detail</a>
                             </div>
                         </div>

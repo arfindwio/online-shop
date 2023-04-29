@@ -123,11 +123,11 @@ $jumlahHalamanNew = ceil($countDataNew / $jumlahDataPerHalaman);
                     <?php } ?>
                     <?php foreach ($queryProductNew as $dataProduct) { ?>
                         <div class="col-6 col-md-4 mb-3">
-                            <div class="card">
+                            <div class="card shadow">
                                 <img src="./image/<?php echo $dataProduct['foto']; ?>" class="card-img-top card-img-product" alt="Product Photo" style="height: 15rem; object-fit: cover;">
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $dataProduct['nama']; ?></h5>
-                                    <div class="card-text" style="display: -webkit-box;-webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;margin-top: -15px;">
+                                    <div class="card-text" style="display: -webkit-box;-webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;margin-top: -15px; opacity: 70%;">
                                         <p><?php echo htmlspecialchars_decode($dataProduct['detail']); ?></p>
                                     </div>
                                     <p class="card-text fs-4 fw-bolder text-center mt-2">Rp. <?php echo $dataProduct['harga']; ?></p>
