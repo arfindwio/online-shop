@@ -75,7 +75,7 @@ $jumlahHalamanNew = ceil($countDataNew / $jumlahDataPerHalaman);
                     <div style="height: 26vh; overflow: auto;">
                         <div class="list-group">
                             <?php foreach ($queryCategory as $dataCategory) { ?>
-                                <a href="./product.php?category=<?php echo $dataCategory['nama']; ?>" class="text-decoration-none list-group-item list-group-item-action border-0
+                                <a href="./product.php?category=<?php echo $dataCategory['nama']; ?>" class="list-category text-decoration-none list-group-item list-group-item-action border-0
                                 <?php if (isset($_GET['category'])) { ?>
                                     <?php if ($_GET['category'] === $dataCategory['nama']) : ?>
                                         bg-dark-subtle rounded-1

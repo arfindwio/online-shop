@@ -41,6 +41,11 @@
   display: block;
 }
 
+.list-category:hover {
+  background-color: rgba(206, 212, 218, 0.3) !important;
+  border-radius: 5px;
+}
+
 @media only screen and (max-width: 768px) {
   .input-group-lg {
     height: 50px !important;
