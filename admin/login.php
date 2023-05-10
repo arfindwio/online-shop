@@ -16,7 +16,8 @@ require "../connection.php";
 
 <body>
     <div class="d-flex justify-content-center align-items-center flex-column" style="height: 100vh;">
-        <div class="p-5 rounded-3 shadow-lg" style="width: 500px; height: 300px; box-sizing: border-box;">
+        <div class="p-5 rounded-3 shadow-lg" style="width: 500px; height: 350px; box-sizing: border-box;">
+            <h1 class="text-center mb-3" style="color: red; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">LOGIN ADMIN</h1>
             <form action="" method="post">
                 <div>
                     <label for="username">Username</label>
@@ -27,7 +28,7 @@ require "../connection.php";
                     <input type="password" class="form-control" name="password" id="password">
                 </div>
                 <div>
-                    <button class="btn btn-success mt-3" type="submit" name="btn-login">Login</button>
+                    <button class="btn btn-success mt-3" type="submit" name="btn-login" style="width: 100%;">Login</button>
                 </div>
             </form>
         </div>

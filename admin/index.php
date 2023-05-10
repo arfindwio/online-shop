@@ -31,7 +31,7 @@ $jumlahProduct = mysqli_num_rows($queryProduct);
                 </li>
             </ol>
         </nav>
-        <h1>HALAMAN <?php echo $_SESSION['username']; ?></h1>
+        <h1>SELAMAT DATANG DI HALAMAN <?php echo strtoupper($_SESSION['username']); ?></h1>
         <div class="container mt-5">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12 mb-3">
