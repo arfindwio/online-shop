@@ -38,7 +38,7 @@ require "../connection.php";
                 $username = htmlspecialchars($_POST['username']);
                 $password = htmlspecialchars($_POST['password']);
 
-                $query = mysqli_query($con, "SELECT * FROM users WHERE username='$username'");
+                $query = mysqli_query($con, "SELECT * FROM admin WHERE username='$username'");
                 $count_data = mysqli_num_rows($query);
                 $data = mysqli_fetch_array($query);
 

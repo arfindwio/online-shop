@@ -138,7 +138,7 @@ $queryCategory = mysqli_query($con, "SELECT * FROM category WHERE id!='$data[kat
                 </div>
                 <div class="mb-2">
                     <label for="price">Price</label>
-                    <input type="number" class="form-control" value="<?php echo $data['harga']; ?>" name="harga" required>
+                    <input type="number" class="form-control" value="<?php echo $data['harga']; ?>" name="harga" min="0" step="500" required>
                 </div>
                 <div>
                     <img src="../image/<?php echo $data['foto'] ?>" alt="Foto Product" style="width: 150px;">

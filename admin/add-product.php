@@ -102,7 +102,7 @@ $queryCategory = mysqli_query($con, "SELECT * FROM category");
                 </div>
                 <div class="mb-2">
                     <label for="price">Price</label>
-                    <input type="number" class="form-control" name="harga" required>
+                    <input type="number" class="form-control" name="harga" min="0" step="500" required>
                 </div>
                 <div class="mb-2">
                     <label for="photo">Photo</label>
