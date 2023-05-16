@@ -23,14 +23,31 @@
     <!-- Banner Product Section End -->
 
     <!-- Main Section Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid pt-5 pb-3">
         <div class="container fs-5">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In omnis harum, eum eveniet doloremque rem! Obcaecati explicabo est iusto voluptate sequi consequatur quos suscipit harum, mollitia perspiciatis dolore? Vitae tenetur quos tempora rerum ab placeat deserunt dolorem iure, voluptate doloribus quidem ratione rem nam, atque dolores sed fugit magnam enim.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum ea dolores labore magnam odit, amet veniam fugiat dignissimos veritatis dolorem nisi, facere possimus nemo eaque quibusdam obcaecati deleniti eveniet sequi hic laboriosam sunt. Commodi cumque doloremque itaque inventore repellat odio in id ullam quod illum adipisci ipsa assumenda suscipit voluptatum sed cum quam officiis est voluptates perspiciatis, sapiente modi ad expedita reiciendis. Voluptatibus recusandae harum iure quasi tempore eveniet neque fugiat molestiae consequuntur, facilis sed vel eum tenetur voluptatum reiciendis consequatur. Ad iusto dolor ea quos nemo doloribus deleniti. Quisquam incidunt architecto qui fugiat tempora accusantium harum, voluptates officia vitae!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam nostrum sequi molestias, deleniti aliquam totam reprehenderit consequuntur delectus accusamus quis. Sint delectus laboriosam nisi obcaecati nihil corporis dolorem, illum unde.</p>
+            <div class="row ">
+                <div class="col-8" style="text-align: justify;">
+                    <p>Selamat datang di Arfin Store</p>
+                    <p>Kami adalah toko pakaian online yang berkomitmen untuk memberikan pengalaman belanja yang praktis, dan menyenangkan bagi pelanggan kami. Di toko ini, kami percaya bahwa pakaian adalah cara yang efektif untuk mengekspresikan diri dan meningkatkan rasa percaya diri.</p>
+                    <p>Kami menawarkan beragam koleksi pakaian untuk pria, dan wanita, dari gaya kasual yang trendi hingga busana formal yang elegan. Kami menjual merek-merek pakaian terkenal dan desainer berbakat untuk memastikan bahwa setiap produk yang kami tawarkan memenuhi standar kualitas tertinggi.</p>
+                    <p> Kenyamanan pelanggan adalah prioritas utama kami. Oleh karena itu, kami menyediakan platform belanja online yang mudah digunakan, sehingga Anda dapat menjelajahi koleksi kami dengan nyaman dari mana saja dan kapan saja. Kami juga menyediakan deskripsi dan ukuran yang jelas untuk setiap produk, serta foto-foto berkualitas tinggi yang memperlihatkan detail produk secara mendetail.</p>
+                </div>
+                <div class="col-4 d-flex align-items-center justify-content-center">
+                    <h1>test</h1>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Main Section End -->
+
+    <!-- Maps Offline Store Section Start -->
+    <div class="container-fluid pb-5">
+        <div class="container">
+            <h1 class="text-center mb-4">Offline Store</h1>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20998.70551817406!2d2.2964323274868033!3d48.86129586525888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc4e8f40001%3A0xe6981dfe4eb6a677!2sBALENCIAGA!5e0!3m2!1sid!2sid!4v1684238548114!5m2!1sid!2sid" style="border:0; width: 100%; height: 70vh;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <!-- Maps Offline Store Section End -->
 
     <!-- Footer Section Start -->
     <?php require "./footer.php"; ?>
