@@ -39,11 +39,11 @@ $queryProduct = mysqli_query($con, "SELECT a.*, b.nama AS nama_kategori FROM pro
             </ol>
         </nav>
 
-        <div class="mt-3 mb-5">
+        <div class="mt-3">
             <h2>Product List</h2>
 
             <a href="./add-product.php" class="btn btn-primary mt-3 mb-2">Add Product</a>
-            <div class="table-responsive ">
+            <div class="table-responsive">
                 <table class="table">
                     <thead class="table-secondary">
                         <tr>

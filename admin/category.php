@@ -45,7 +45,7 @@ $queryCategoryNew = mysqli_query($con, "SELECT * FROM category LIMIT $awalData, 
         <div class="mt-3">
             <h2>Category List</h2>
             <a href="./add-category.php" class="btn btn-primary mt-3 mb-2">Add Category</a>
-            <div class="table-responsive mt-3">
+            <div class="table-responsive">
                 <table class="table">
                     <thead class="table-secondary">
                         <tr>

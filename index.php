@@ -2,7 +2,6 @@
 require "./connection.php";
 $queryProduct = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM product LIMIT 6")
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 

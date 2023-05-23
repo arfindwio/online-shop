@@ -23,17 +23,17 @@
     <!-- Banner Product Section End -->
 
     <!-- Main Section Start -->
-    <div class="container-fluid pt-5 pb-3">
+    <div class="container-fluid pb-3" style="margin-top: 80px">
         <div class="container fs-5">
             <div class="row ">
-                <div class="col-8" style="text-align: justify;">
-                    <p>Selamat datang di Arfin Store</p>
-                    <p>Kami adalah toko pakaian online yang berkomitmen untuk memberikan pengalaman belanja yang praktis, dan menyenangkan bagi pelanggan kami. Di toko ini, kami percaya bahwa pakaian adalah cara yang efektif untuk mengekspresikan diri dan meningkatkan rasa percaya diri.</p>
-                    <p>Kami menawarkan beragam koleksi pakaian untuk pria, dan wanita, dari gaya kasual yang trendi hingga busana formal yang elegan. Kami menjual merek-merek pakaian terkenal dan desainer berbakat untuk memastikan bahwa setiap produk yang kami tawarkan memenuhi standar kualitas tertinggi.</p>
-                    <p> Kenyamanan pelanggan adalah prioritas utama kami. Oleh karena itu, kami menyediakan platform belanja online yang mudah digunakan, sehingga Anda dapat menjelajahi koleksi kami dengan nyaman dari mana saja dan kapan saja. Kami juga menyediakan deskripsi dan ukuran yang jelas untuk setiap produk, serta foto-foto berkualitas tinggi yang memperlihatkan detail produk secara mendetail.</p>
+                <div class="bg-secondary-subtle rounded-2" style="position: absolute; height: 36rem; width: 63rem; z-index: -1;"></div>
+                <div class="col-6 offset-1" style="margin-top: 80px; margin-bottom: 100px;">
+                    <h5 class="text-light-emphasis" style="font-size: 20px;">OUR STORE</h5>
+                    <h1 class="mb-3">About Arfin Store</h1>
+                    <p style="line-height: 32px; font-size: 17px;">We are an online clothing store committed to providing our customers with a convenient and enjoyable shopping experience. At this store, we believe that clothing is an effective way to express yourself and boost your self-esteem. We offer a wide range of clothing for men and women, from trendy casual styles to elegant formal wear. We sell well-known clothing brands and talented designers to ensure that every product we offer meets the highest quality standards. Customer convenience is our top priority. Therefore, we provide an easy-to-use online shopping platform, so you can browse our collections conveniently from anywhere and at any time. We also provide clear descriptions and measurements for each product, as well as high-quality photos that show detailed product details.</p>
                 </div>
-                <div class="col-4 d-flex align-items-center justify-content-center">
-                    <h1>test</h1>
+                <div class="col-5 d-flex align-items-center justify-content-center">
+                    <img src="./image/about-us_image.jpg" alt="image about us" style="width: 30rem; height: 25rem; border-radius: 3%;">
                 </div>
             </div>
         </div>
