@@ -110,7 +110,7 @@ $queryCategory = mysqli_query($con, "SELECT * FROM category");
                 </div>
                 <div class="mb-2">
                     <label for="detail">Detail</label>
-                    <textarea name="detail" id="detail" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="detail" id="detail" cols="30" rows="10" maxlength="500" class="form-control"></textarea>
                 </div>
                 <div class="mb-2">
                     <label for="stock">Stock Availability</label>

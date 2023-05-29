@@ -149,7 +149,7 @@ $queryCategory = mysqli_query($con, "SELECT * FROM category WHERE id!='$data[kat
                 </div>
                 <div class="mb-2">
                     <label for="detail">Detail</label>
-                    <textarea name="detail" id="detail" cols="30" rows="10" class="form-control">
+                    <textarea name="detail" id="detail" cols="30" rows="10" maxlength="500" class="form-control">
                         <?php echo htmlspecialchars_decode($data['detail']); ?>
                     </textarea>
                 </div>
