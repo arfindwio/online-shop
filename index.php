@@ -19,7 +19,7 @@ $queryProduct = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM pr
     <?php require "./navbar.php"; ?>
 
     <!-- banner Section Start -->
-    <div class="container-fluid d-flex align-items-center" style="height: 80vh; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./image/banner.jpg'); background-size: cover; margin-top: 50px;">
+    <div class="container-fluid d-flex align-items-center" style="height: 80vh; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./image/banner.svg'); background-size: cover; margin-top: 50px;">
         <div class="container text-white text-center">
             <h1>Online Clothing Store</h1>
             <div class="col-md-8 offset-md-2">
@@ -42,21 +42,21 @@ $queryProduct = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM pr
             <div class="row mt-5">
                 <div class="col-md-4 mb-3">
                     <a class="text-decoration-none" href="./product.php?category=shirt">
-                        <div class="d-flex align-items-center justify-content-center" style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./image/Category-Shirt.jpg'); background-size: cover; background-position: center;">
+                        <div class="d-flex align-items-center justify-content-center" style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./image/Category-Shirt.svg'); background-size: cover; background-position: center;">
                             <h4 class="text-white">Shirt</h4>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-4 mb-3">
                     <a class="text-decoration-none" href="./product.php?category=hat">
-                        <div class="d-flex align-items-center justify-content-center" style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./image/Category-Hat.jpg'); background-size: cover; background-position: center;">
+                        <div class="d-flex align-items-center justify-content-center" style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./image/Category-Hat.svg'); background-size: cover; background-position: center;">
                             <h4 class="text-white">Hat</h4>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-4 mb-3">
                     <a class="text-decoration-none" href="./product.php?category=shoes">
-                        <div class="d-flex align-items-center justify-content-center" style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./image/Category-shoes.jpg'); background-size: cover; background-position: center;">
+                        <div class="d-flex align-items-center justify-content-center" style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./image/Category-shoes.svg'); background-size: cover; background-position: center;">
                             <h4 class="text-white">Shoes</h4>
                         </div>
                     </a>
@@ -69,7 +69,7 @@ $queryProduct = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM pr
     <div class="container-fluid py-5" style="background-color: #494848;">
         <div class="container text-center">
             <h3 class="text-light fw-bold">About Us</h3>
-            <p class="text-about-us text-white-50 mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur sit neque corporis repellat quas nostrum voluptatibus dicta sed minus mollitia unde soluta magni accusantium, iure, itaque veritatis. Ab, hic nisi voluptate error minima recusandae porro impedit laboriosam suscipit eum quis voluptatem quibusdam natus praesentium quae doloribus nam dicta. Repellendus, sapiente!</p>
+            <p class="text-about-us text-white-50 mt-3">We are a customer-centric online clothing store offering a diverse range of high-quality clothing for men and women. Our user-friendly platform ensures convenient shopping anytime, anywhere. Express yourself and boost your self-esteem with our trendy casual styles and elegant formal wear from renowned brands and talented designers</p>
 
         </div>
     </div>

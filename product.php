@@ -58,7 +58,7 @@ $jumlahHalamanNew = ceil($countDataNew / $jumlahDataPerHalaman);
     <?php require "./navbar.php"; ?>
 
     <!-- Banner Product Section Start -->
-    <div class="container-fluid d-flex align-items-center" style="height: 40vh; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./image/banner-product.jpg'); background-size: cover; background-position: center; margin-top: 50px;">
+    <div class="container-fluid d-flex align-items-center" style="height: 40vh; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./image/banner-product.svg'); background-size: cover; background-position: center; margin-top: 50px;">
         <div class="container text-white text-center">
             <h1>Product</h1>
         </div>

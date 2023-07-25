@@ -15,7 +15,7 @@
     <?php require "./navbar.php"; ?>
 
     <!-- Banner Product Section Start -->
-    <div class="container-fluid d-flex align-items-center" style="height: 40vh; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./image/about-us.jpg'); background-size: cover; background-position: center; margin-top: 50px;">
+    <div class="container-fluid d-flex align-items-center" style="height: 40vh; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./image/about-us.svg'); background-size: cover; background-position: center; margin-top: 50px;">
         <div class="container text-white text-center">
             <h1>About Us</h1>
         </div>
@@ -25,15 +25,24 @@
     <!-- Main Section Start -->
     <div class="container-fluid pb-3" style="margin-top: 80px">
         <div class="container fs-5">
-            <div class="row ">
-                <div class="bg-secondary-subtle rounded-2" style="position: absolute; height: 36rem; width: 63rem; z-index: -1;"></div>
+            <div class="row d-none d-xl-flex align-items-center">
+                <div class="bg-secondary-subtle rounded-2" style="position: absolute; height: 40rem; width: 63rem; z-index: -1;"></div>
                 <div class="col-6 offset-1" style="margin-top: 80px; margin-bottom: 100px;">
                     <h5 class="text-light-emphasis" style="font-size: 20px;">OUR STORE</h5>
                     <h1 class="mb-3">About Arfin Store</h1>
                     <p style="line-height: 32px; font-size: 17px;">We are an online clothing store committed to providing our customers with a convenient and enjoyable shopping experience. At this store, we believe that clothing is an effective way to express yourself and boost your self-esteem. We offer a wide range of clothing for men and women, from trendy casual styles to elegant formal wear. We sell well-known clothing brands and talented designers to ensure that every product we offer meets the highest quality standards. Customer convenience is our top priority. Therefore, we provide an easy-to-use online shopping platform, so you can browse our collections conveniently from anywhere and at any time. We also provide clear descriptions and measurements for each product, as well as high-quality photos that show detailed product details.</p>
                 </div>
-                <div class="col-5 d-flex align-items-center justify-content-center">
-                    <img src="./image/about-us_image.jpg" alt="image about us" style="width: 30rem; height: 25rem; border-radius: 3%;">
+                <div class="col-5 d-flex justify-content-center">
+                    <img src="./image/about-us_image.svg" alt="image about us" style="width: 34rem; border-radius: 3%; object-fit: cover;">
+                </div>
+            </div>
+            <div class="row d-xl-none">
+                <div class="col-9 d-flex mx-auto">
+                    <img src="./image/about-us_image.svg" alt="image about us" style="width: 100%; border-radius: 3%; object-fit: cover;">
+                </div>
+                <div class="col-12 bg-secondary-subtle rounded-2 text-center p-2 px-4 mt-4 mb-5">
+                    <h1 class="mb-3">About Arfin Store</h1>
+                    <p class="" style="line-height: 32px; font-size: 17px;">We are an online clothing store committed to providing our customers with a convenient and enjoyable shopping experience. At this store, we believe that clothing is an effective way to express yourself and boost your self-esteem. We offer a wide range of clothing for men and women, from trendy casual styles to elegant formal wear. We sell well-known clothing brands and talented designers to ensure that every product we offer meets the highest quality standards. Customer convenience is our top priority. Therefore, we provide an easy-to-use online shopping platform, so you can browse our collections conveniently from anywhere and at any time. We also provide clear descriptions and measurements for each product, as well as high-quality photos that show detailed product details.</p>
                 </div>
             </div>
         </div>
