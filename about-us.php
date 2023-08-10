@@ -23,7 +23,7 @@
     <!-- Banner Product Section End -->
 
     <!-- Main Section Start -->
-    <div class="container-fluid pb-3" style="margin-top: 80px">
+    <div class="container-fluid pb-3 mb-5" style="margin-top: 80px">
         <div class="container fs-5">
             <div class="row d-none d-xl-flex align-items-center">
                 <div class="bg-secondary-subtle rounded-2" style="position: absolute; height: 40rem; width: 63rem; z-index: -1;"></div>

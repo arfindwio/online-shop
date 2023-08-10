@@ -48,6 +48,6 @@
     </div>
 </div>
 
-<a href="https://wa.me/081211891144" class="btn-fixed-wa d-flex justify-content-center align-items-center rounded-circle" style="width: 10vh; height: 10vh; background-color: #3cc70a; position: fixed; bottom: 5vh; right: 5vh; box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;" target="_blank" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="left" data-bs-content="Message Us">
+<a href="https://wa.me/6281211891144" class="btn-fixed-wa d-flex justify-content-center align-items-center rounded-circle" style="width: 10vh; height: 10vh; background-color: #3cc70a; position: fixed; bottom: 5vh; right: 5vh; box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;" target="_blank" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="left" data-bs-content="Message Us">
     <i class="fa-brands fa-whatsapp" style="color: #ffffff; font-size: 7vh;"></i>
 </a>
