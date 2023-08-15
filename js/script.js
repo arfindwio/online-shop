@@ -28,29 +28,29 @@ ClassicEditor.create(document.querySelector("#detail")).catch((error) => {
 
 // cart
 
-$("#success").hide();
-$("#close-alert").on("click", () => {
-  $("#success").hide();
-});
-// ajax add to cart
-function addToCart(productId, qty, user_id) {
-  $.ajax({
-    url: "add-to-cart.php",
-    method: "post",
-    data: {
-      product_id: productId,
-      user_id: user_id,
-      qty: qty,
-    },
-    cache: false,
-    success: function (res) {
-      let result = JSON.parse(res);
-      console.log(result);
-      if (result.statusCode === 200) {
-        window.location.href = "./my-cart";
-      } else {
-        $("#success").hide();
-      }
-    },
-  });
+function addToCart(productId) {
+  // Check if local storage is supported
+  if (typeof Storage !== "undefined") {
+    // Get existing cart data from local storage or initialize if not present
+    var cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+
+    // Fetch product details from the server using the product ID
+    fetch("get_product_details.php?id=" + encodeURIComponent(productId))
+      .then((response) => response.json())
+      .then((productDetails) => {
+        // Add the product to cartData
+        cartData.push(productDetails);
+
+        // Store updated cartData in local storage
+        localStorage.setItem("cartData", JSON.stringify(cartData));
+
+        // Redirect to the shopping cart page
+        window.location.href = "shopping-cart.php";
+      })
+      .catch((error) => {
+        console.error("Error fetching product details:", error);
+      });
+  } else {
+    alert("Local storage is not supported in your browser.");
+  }
 }
