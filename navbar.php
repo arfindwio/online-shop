@@ -15,6 +15,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-light fs-5" href="./product.php">Product</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light fs-5" href="./shopping-cart.php"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></a>
+                </li>
             </ul>
         </div>
     </div>

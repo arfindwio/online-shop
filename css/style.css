@@ -46,6 +46,20 @@
   border-radius: 5px;
 }
 
+.shopping-cart__items::-webkit-scrollbar {
+  display: none;
+}
+
+.shopping-cart .shopping-cart__items {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.secondary-placeholder::placeholder {
+  color: #c4c4c4;
+  opacity: 1;
+}
+
 @media only screen and (max-width: 768px) {
   .input-group-lg {
     height: 50px !important;
