@@ -25,3 +25,32 @@ const popoverList = [...popoverTriggerList].map((popoverTriggerEl) => new bootst
 ClassicEditor.create(document.querySelector("#detail")).catch((error) => {
   console.error(error);
 });
+
+// cart
+
+$("#success").hide();
+$("#close-alert").on("click", () => {
+  $("#success").hide();
+});
+// ajax add to cart
+function addToCart(productId, qty, user_id) {
+  $.ajax({
+    url: "add-to-cart.php",
+    method: "post",
+    data: {
+      product_id: productId,
+      user_id: user_id,
+      qty: qty,
+    },
+    cache: false,
+    success: function (res) {
+      let result = JSON.parse(res);
+      console.log(result);
+      if (result.statusCode === 200) {
+        window.location.href = "./my-cart";
+      } else {
+        $("#success").hide();
+      }
+    },
+  });
+}

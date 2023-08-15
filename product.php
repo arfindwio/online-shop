@@ -1,9 +1,14 @@
 <?php
+session_start();
 require "./connection.php";
+if ($_SESSION["product"] == false) {
+    header("location: product.php");
+}
 
 $queryCategory = mysqli_query($con, "SELECT * FROM category");
 
 $data = mysqli_query($con, "SELECT * FROM product");
+$data = mysqli_query($con, "SELECT * FROM customer");
 $countData = mysqli_num_rows($data);
 
 // pagination
@@ -38,6 +43,33 @@ $countDataNew = mysqli_num_rows($queryProduct);
 
 // Untuk menghitung halaman sesuai category, search, sort
 $jumlahHalamanNew = ceil($countDataNew / $jumlahDataPerHalaman);
+
+// Check if the form was submitted
+if (isset($_POST['add-cart'])) {
+    // Check if product ID was provided in the form
+    if (isset($_POST['product_id'])) {
+        $productId = $_POST['product_id'];
+
+        // Retrieve product details from the database using $productId
+        // For example:
+        // $productDetails = fetchProductDetails($productId);
+
+        // Check if the product exists and if so, add it to the cart
+        if ($productDetails) {
+            // Create or update the cart session variable
+            if (!isset($_SESSION['cart'])) {
+                $_SESSION['cart'] = [];
+            }
+
+            // Add the product to the cart
+            $_SESSION['cart'][] = $productDetails;
+
+            // Redirect to the product page or cart page
+            header('Location: product.php');
+            exit;
+        }
+    }
+}
 
 ?>
 
@@ -131,7 +163,10 @@ $jumlahHalamanNew = ceil($countDataNew / $jumlahDataPerHalaman);
                                         <p><?php echo htmlspecialchars_decode($dataProduct['detail']); ?></p>
                                     </div>
                                     <p class="card-text fs-4 fw-bolder text-center mt-2">Rp. <?php echo $dataProduct['harga']; ?></p>
-                                    <a href="./product-detail.php?nama=<?php echo $dataProduct['nama']; ?>" class="btn btn-primary d-flex justify-content-center">Lihat Detail</a>
+                                    <div class="d-flex justify-content-center">
+                                        <a href="./product-detail.php?nama=<?php echo $dataProduct['nama']; ?>" class="col-5 btn btn-primary me-2 py-2">Lihat Detail</a>
+                                        <button onclick="addToCart(<?= $dataProduct['id'] ?>, )" class="col-5 text-decoration-none text-white bg-dark rounded-3 py-2">Add To Cart</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
