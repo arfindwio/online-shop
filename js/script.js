@@ -27,7 +27,6 @@ ClassicEditor.create(document.querySelector("#detail")).catch((error) => {
 });
 
 // cart
-
 function addToCart(productId) {
   // Check if local storage is supported
   if (typeof Storage !== "undefined") {

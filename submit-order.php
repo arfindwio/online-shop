@@ -13,12 +13,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn-pay'])) {
     $buktiPelanggan = $_FILES['buktiPelanggan']['name'];
     $buktiPelangganTmp = $_FILES['buktiPelanggan']['tmp_name'];
     $buktiPelangganPath = "./uploads/" . $namaPelanggan . "_" . basename($buktiPelanggan); // Using customer's name as part of the filename
+    $buktiPelangganImg = $namaPelanggan . "_" . basename($buktiPelanggan);
 
     // Move the uploaded file to the uploads folder
     if (move_uploaded_file($buktiPelangganTmp, $buktiPelangganPath)) {
         // Insert customer data into the database
         $insertCustomerQuery = "INSERT INTO customer (namaPelanggan, teleponPelanggan, alamatPelanggan, buktiPelanggan, jumlahBarang, itemNames, itemQuantities) 
-                                VALUES ('$namaPelanggan', '$teleponPelanggan', '$alamatPelanggan', '$buktiPelangganPath', '$totalAmount', '$itemNames', '$itemQuantities')";
+                                VALUES ('$namaPelanggan', '$teleponPelanggan', '$alamatPelanggan', '$buktiPelangganImg', '$totalAmount', '$itemNames', '$itemQuantities')";
         $insertCustomerResult = mysqli_query($con, $insertCustomerQuery);
 
         if ($insertCustomerResult) {

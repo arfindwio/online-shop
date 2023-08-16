@@ -47,7 +47,7 @@
                 <div class="col-7 p-5">
                     <div class="d-flex align-items-center pb-5 border-3 border-bottom">
                         <h1 class="fw-bold">Shopping Cart</h1>
-                        <p class="text-secondary fs-5 mt-3 ms-auto">3 items</p>
+                        <p class="text-secondary fs-5 mt-3 ms-auto">items</p>
                     </div>
                     <div class="shopping-cart__items" style="overflow: scroll; height: 65%;">
 
@@ -57,12 +57,13 @@
                 <!-- ... (previous HTML code) -->
 
                 <div class="col-5 bg-dark-subtle p-5">
-                    <div class="d-flex align-items-center pb-5 border-3 border-bottom border-dark-subtle">
-                        <h2 class="fw-bold mt-3">Summary</h2>
+                    <div class="d-flex align-items-center border-3 border-bottom border-dark-subtle pb-5">
+                        <h2 class="fw-bold me-auto">Summary</h2>
+                        <img src="./image/nomorRekening.svg" alt="barcode" style="width: 65px; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#imageModal">
                     </div>
                     <p class="fw-semibold fs-3 mt-3">Price Detail</p>
                     <div class="d-flex">
-                        <p class="fs-5 mt-1 mb-0">Items</p>
+                        <p class="fs-5 mt-1 mb-0" id="itemTotal">Items</p>
                         <p class="fs-5 mt-1 mb-0 ms-auto" id="totalItemsPrice">Rp. 0</p>
                     </div>
                     <div class="d-flex border-bottom border-1 border-dark">
@@ -80,8 +81,15 @@
             </div>
         </form>
     </div>
-    <!-- Inside the script tag of your shopping-cart.php -->
-    <!-- Inside the script tag of your shopping-cart.php -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center px-4">
+                <p class="fw-bold fs-4 mb-0 pt-4">Scan This Barcode</p>
+                <img src="./image/nomorRekening.svg">
+                <p class="fw-bold fs-4 mb-0 pb-4">BCA bank account number</p>
+            </div>
+        </div>
+    </div>
     <script>
         // Check if local storage is supported
         if (typeof(Storage) !== "undefined") {
@@ -109,7 +117,7 @@
                     var cartItemHtml = `
                     <div class="d-flex align-items-center py-3 border-2 border-bottom">
                         <img src="./image/${cartItem.foto}" alt="cart item image" class="rounded-3" style="width: 120px; height: 120px; object-fit: cover">
-                        <p class="fs-2 fw-semibold mt-3 ms-3">${cartItem.nama}</p>
+                        <p class="fs-2 fw-semibold mt-3 ms-3 me-auto">${cartItem.nama}</p>
                         <p class="fw-bold fs-4 mt-3">Rp. ${cartItem.harga}</p>
                         <div class="fs-5 ms-3">
                             <i class="fa-solid fa-trash" style="color: #ff0000; cursor: pointer;"
@@ -152,9 +160,10 @@
             var totalTax = totalItemsPrice * 0.1; // Assume 10% tax
             var totalAmount = totalItemsPrice + totalTax;
 
-            document.querySelector('.fs-5.mt-3.ms-auto').textContent = formatCurrency(totalItemsPrice.toFixed(2));
+            document.querySelector('.fs-5.mt-3.ms-auto').textContent = `${totalItems} Items`;
             document.querySelector('#tax').textContent = formatCurrency(totalTax.toFixed(2));
             document.querySelector('#totalAmount').textContent = formatCurrency(totalAmount.toFixed(2));
+            document.querySelector('#itemTotal').textContent = `${totalItems} Items`;
             document.querySelector('#totalItemsPrice').textContent = formatCurrency(totalItemsPrice.toFixed(2));
 
             // Update the input field value
@@ -174,6 +183,14 @@
             displayCartItems();
             updateSummary(); // Update summary after item removal
         }
+
+        var imageModal = document.getElementById('imageModal');
+        imageModal.addEventListener('show.bs.modal', function(event) {
+            var image = event.relatedTarget; // Button that triggered the modal
+            var imageSrc = image.getAttribute('src'); // Get the image source
+            var modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc; // Set the source of the modal image
+        });
     </script>
 
 

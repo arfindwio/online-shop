@@ -16,6 +16,9 @@
                     <a class="nav-link text-light fs-5" href="./product.php">Product</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link text-light fs-5" href="./transaction.php">Transaction</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link fs-5" href="./logout.php">Logout</a>
                 </li>
             </ul>
