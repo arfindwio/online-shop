@@ -93,7 +93,7 @@ $queryCustomerNew = mysqli_query($con, "SELECT * FROM customer LIMIT $awalData, 
                                     <td class="align-middle text-center"><?php echo $dataCustomer['alamatPelanggan']; ?></td>
                                     <td class="align-middle text-center"><?php echo $dataCustomer['totalHarga']; ?></td>
                                     <td class="align-middle text-center"><?php echo $dataCustomer['itemNames']; ?></td>
-                                    <td class="align-middle text-center"><?php echo $dataCustomer['itemQuantities']; ?></td>
+                                    <td class="align-middle text-center"><?php echo $dataCustomer['jumlahBarang']; ?></td>
                                 </tr>
                         <?php
                                 $number++;

@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn-pay'])) {
     // Move the uploaded file to the uploads folder
     if (move_uploaded_file($buktiPelangganTmp, $buktiPelangganPath)) {
         // Insert customer data into the database
-        $insertCustomerQuery = "INSERT INTO customer (namaPelanggan, teleponPelanggan, alamatPelanggan, buktiPelanggan, totalHarga, itemNames, itemQuantities) 
+        $insertCustomerQuery = "INSERT INTO customer (namaPelanggan, teleponPelanggan, alamatPelanggan, buktiPelanggan, totalHarga, namaBarang, jumlahBarang) 
                                 VALUES ('$namaPelanggan', '$teleponPelanggan', '$alamatPelanggan', '$buktiPelangganImg', '$totalAmount', '$itemNames', '$itemQuantities')";
         $insertCustomerResult = mysqli_query($con, $insertCustomerQuery);
 
