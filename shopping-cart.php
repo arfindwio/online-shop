@@ -200,6 +200,7 @@
 
     <script src="./bootstrap/js/bootstrap.bundle.js"></script>
     <script src="./fontawesome/js/all.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

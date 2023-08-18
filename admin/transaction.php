@@ -92,7 +92,7 @@ $queryCustomerNew = mysqli_query($con, "SELECT * FROM customer LIMIT $awalData, 
                                     <td class="align-middle text-center"><?php echo $dataCustomer['teleponPelanggan']; ?></td>
                                     <td class="align-middle text-center"><?php echo $dataCustomer['alamatPelanggan']; ?></td>
                                     <td class="align-middle text-center"><?php echo $dataCustomer['totalHarga']; ?></td>
-                                    <td class="align-middle text-center"><?php echo $dataCustomer['itemNames']; ?></td>
+                                    <td class="align-middle text-center"><?php echo $dataCustomer['namaBarang']; ?></td>
                                     <td class="align-middle text-center"><?php echo $dataCustomer['jumlahBarang']; ?></td>
                                 </tr>
                         <?php
@@ -106,7 +106,7 @@ $queryCustomerNew = mysqli_query($con, "SELECT * FROM customer LIMIT $awalData, 
         </div>
     </div>
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-dialog modal-md modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body text-center">
                     <img id="modalImage" src="" alt="Bukti Pembayaran" class="img-fluid">
