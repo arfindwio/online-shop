@@ -94,10 +94,10 @@
         // Check if local storage is supported
         if (typeof(Storage) !== "undefined") {
             // Get cart data from local storage
-            var cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+            let cartData = JSON.parse(localStorage.getItem('cartData')) || [];
 
             // Get the element to display the cart items
-            var cartItemsElement = document.querySelector('.shopping-cart__items');
+            let cartItemsElement = document.querySelector('.shopping-cart__items');
 
             // Function to remove an item from the cart and update local storage
             function removeCartItem(index) {
@@ -112,9 +112,9 @@
                 cartItemsElement.innerHTML = ''; // Clear the existing items
 
                 // Loop through the cart data and generate the HTML for each cart item
-                for (var i = 0; i < cartData.length; i++) {
-                    var cartItem = cartData[i];
-                    var cartItemHtml = `
+                for (let i = 0; i < cartData.length; i++) {
+                    let cartItem = cartData[i];
+                    let cartItemHtml = `
                     <div class="d-flex align-items-center py-3 border-2 border-bottom">
                         <img src="./image/${cartItem.foto}" alt="cart item image" class="rounded-3" style="width: 120px; height: 120px; object-fit: cover">
                         <p class="fs-2 fw-semibold mt-3 ms-3 me-auto">${cartItem.nama}</p>
@@ -128,14 +128,30 @@
                 }
             }
 
+            function handleConfirmButtonClick() {
+                // Clear the cart data from local storage
+                localStorage.removeItem('cartData');
+
+                // Clear the displayed cart items on the page
+                cartItemsElement.innerHTML = '';
+
+                // Redirect to another page or perform any other actions you need
+                // For example, you can redirect to a thank you page
+                // window.location.href = 'thank-you-page.html';
+            }
+
+            // Add a click event listener to the "Confirm" button
+            let confirmButton = document.querySelector('[name="btn-pay"]');
+            confirmButton.addEventListener('click', handleConfirmButtonClick);
+
             displayCartItems(); // Display cart items on page load
         } else {
             alert("Local storage is not supported in your browser.");
         }
 
         function calculateTotalPrice() {
-            var totalPrice = 0;
-            for (var i = 0; i < cartData.length; i++) {
+            let totalPrice = 0;
+            for (let i = 0; i < cartData.length; i++) {
                 totalPrice += parseFloat(cartData[i].harga);
             }
             return totalPrice;
@@ -155,10 +171,10 @@
         // Function to update the summary section
         function updateSummary() {
 
-            var totalItems = cartData.length;
-            var totalItemsPrice = calculateTotalPrice();
-            var totalTax = totalItemsPrice * 0.1; // Assume 10% tax
-            var totalAmount = totalItemsPrice + totalTax;
+            let totalItems = cartData.length;
+            let totalItemsPrice = calculateTotalPrice();
+            let totalTax = totalItemsPrice * 0.1; // Assume 10% tax
+            let totalAmount = totalItemsPrice + totalTax;
 
             document.querySelector('.fs-5.mt-3.ms-auto').textContent = `${totalItems} Items`;
             document.querySelector('#tax').textContent = formatCurrency(totalTax.toFixed(2));
@@ -170,8 +186,8 @@
             document.querySelector('#calculatedTotalAmount').value = totalAmount.toFixed(2);
             document.querySelector('#totalAmountInput').value = totalAmount.toFixed(2);
 
-            var itemNames = cartData.map(item => item.nama);
-            var itemQuantities = cartData.map(item => 1); // Assuming each item quantity is 1
+            let itemNames = cartData.map(item => item.nama);
+            let itemQuantities = cartData.map(item => 1); // Assuming each item quantity is 1
             document.querySelector('#itemNamesInput').value = itemNames.join(', ');
             document.querySelector('#itemQuantitiesInput').value = itemQuantities.join(', ');
 
@@ -184,11 +200,11 @@
             updateSummary(); // Update summary after item removal
         }
 
-        var imageModal = document.getElementById('imageModal');
+        let imageModal = document.getElementById('imageModal');
         imageModal.addEventListener('show.bs.modal', function(event) {
-            var image = event.relatedTarget; // Button that triggered the modal
-            var imageSrc = image.getAttribute('src'); // Get the image source
-            var modalImage = document.getElementById('modalImage');
+            let image = event.relatedTarget; // Button that triggered the modal
+            let imageSrc = image.getAttribute('src'); // Get the image source
+            let modalImage = document.getElementById('modalImage');
             modalImage.src = imageSrc; // Set the source of the modal image
         });
     </script>

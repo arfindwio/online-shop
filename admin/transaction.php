@@ -138,7 +138,7 @@ $queryCustomerNew = mysqli_query($con, "SELECT * FROM customer LIMIT $awalData, 
     <script>
         $(document).ready(function() {
             $('.bukti-pembayaran').on('click', function() {
-                var imageUrl = $(this).data('image');
+                let imageUrl = $(this).data('image');
                 $('#modalImage').attr('src', imageUrl);
                 $('#imageModal').modal('show');
             });

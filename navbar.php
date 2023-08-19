@@ -15,8 +15,14 @@
                 <li class="nav-item">
                     <a class="nav-link text-light fs-5" href="./product.php">Product</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light fs-5" href="./shopping-cart.php"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></a>
+                <li class="nav-item list-group-item d-flex justify-content-end align-items-start">
+                    <a class="nav-link text-light fs-5 pe-2" href="./shopping-cart.php"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></a>
+                    <span class="list-group-cart rounded-5 text-white bg-danger px-1 fw-bold position-absolute" style="font-size: 12px">
+                        <script>
+                            let cartDataProduct = JSON.parse(localStorage.getItem('cartData'));
+                            document.write(cartDataProduct.length);
+                        </script>
+                    </span>
                 </li>
             </ul>
         </div>

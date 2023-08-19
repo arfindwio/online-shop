@@ -42,9 +42,7 @@ function addToCart(productId) {
 
         // Store updated cartData in local storage
         localStorage.setItem("cartData", JSON.stringify(cartData));
-
-        // Redirect to the shopping cart page
-        window.location.href = "shopping-cart.php";
+        location.reload();
       })
       .catch((error) => {
         console.error("Error fetching product details:", error);
