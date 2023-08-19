@@ -94,13 +94,14 @@
         // Check if local storage is supported
         if (typeof(Storage) !== "undefined") {
             // Get cart data from local storage
-            let cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+
 
             // Get the element to display the cart items
             let cartItemsElement = document.querySelector('.shopping-cart__items');
 
             // Function to remove an item from the cart and update local storage
             function removeCartItem(index) {
+                let cartData = JSON.parse(localStorage.getItem('cartData')) || [];
                 cartData.splice(index, 1);
                 localStorage.setItem('cartData', JSON.stringify(cartData));
                 displayCartItems();
@@ -109,6 +110,7 @@
 
             // Function to display cart items
             function displayCartItems() {
+                let cartData = JSON.parse(localStorage.getItem('cartData')) || [];
                 cartItemsElement.innerHTML = ''; // Clear the existing items
 
                 // Loop through the cart data and generate the HTML for each cart item
@@ -129,6 +131,7 @@
             }
 
             function handleConfirmButtonClick() {
+                let cartData = JSON.parse(localStorage.getItem('cartData')) || [];
                 // Clear the cart data from local storage
                 localStorage.removeItem('cartData');
 
@@ -150,6 +153,7 @@
         }
 
         function calculateTotalPrice() {
+            let cartData = JSON.parse(localStorage.getItem('cartData')) || [];
             let totalPrice = 0;
             for (let i = 0; i < cartData.length; i++) {
                 totalPrice += parseFloat(cartData[i].harga);
@@ -170,7 +174,7 @@
 
         // Function to update the summary section
         function updateSummary() {
-
+            let cartData = JSON.parse(localStorage.getItem('cartData')) || [];
             let totalItems = cartData.length;
             let totalItemsPrice = calculateTotalPrice();
             let totalTax = totalItemsPrice * 0.1; // Assume 10% tax
@@ -194,6 +198,7 @@
         }
 
         function removeCartItem(index) {
+            let cartData = JSON.parse(localStorage.getItem('cartData')) || [];
             cartData.splice(index, 1);
             localStorage.setItem('cartData', JSON.stringify(cartData));
             displayCartItems();
