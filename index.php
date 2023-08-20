@@ -42,21 +42,21 @@ $queryProduct = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM pr
             <div class="row mt-5">
                 <div class="col-md-4 mb-3">
                     <a class="text-decoration-none" href="./product.php?category=shirt">
-                        <div class="d-flex align-items-center justify-content-center" style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./image/Category-Shirt.svg'); background-size: cover; background-position: center;">
+                        <div class="d-flex align-items-center justify-content-center" style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./image/shirt1.svg'); background-size: cover; background-position: center;">
                             <h4 class="text-white">Shirt</h4>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-4 mb-3">
                     <a class="text-decoration-none" href="./product.php?category=hat">
-                        <div class="d-flex align-items-center justify-content-center" style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./image/Category-Hat.svg'); background-size: cover; background-position: center;">
+                        <div class="d-flex align-items-center justify-content-center" style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./image/hat1.svg'); background-size: cover; background-position: center;">
                             <h4 class="text-white">Hat</h4>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-4 mb-3">
                     <a class="text-decoration-none" href="./product.php?category=shoes">
-                        <div class="d-flex align-items-center justify-content-center" style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./image/Category-shoes.svg'); background-size: cover; background-position: center;">
+                        <div class="d-flex align-items-center justify-content-center" style="height: 250px; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./image/shoes1.svg'); background-size: cover; background-position: center;">
                             <h4 class="text-white">Shoes</h4>
                         </div>
                     </a>
