@@ -14,6 +14,9 @@
 <body>
     <?php require "./navbar.php"; ?>
 
+    <div class="alert alert-danger position-fixed text-center rounded-4 py-2 px-5" style="z-index: 99; top: 80px; left: 50%; transform: translateX(-50%);">test</div>
+
+
     <div class="shopping-cart container py-5">
         <form action="submit-order.php" method="POST" enctype="multipart/form-data">
             <div class="col-6 rounded-4 shadow-lg mt-5 p-4 mx-auto">
@@ -93,9 +96,6 @@
     <script>
         // Check if local storage is supported
         if (typeof(Storage) !== "undefined") {
-            // Get cart data from local storage
-
-
             // Get the element to display the cart items
             let cartItemsElement = document.querySelector('.shopping-cart__items');
 
