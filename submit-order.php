@@ -20,25 +20,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn-pay'])) {
 
     // Check if the uploaded file has a valid extension
     if (in_array($buktiPelangganExtension, $allowedExtensions)) {
-        // Move the uploaded file to the uploads folder
-        if (move_uploaded_file($buktiPelangganTmp, $buktiPelangganPath)) {
-            // Insert customer data into the database
-            $insertCustomerQuery = "INSERT INTO customer (namaPelanggan, teleponPelanggan, alamatPelanggan, buktiPelanggan, totalHarga, namaBarang, jumlahBarang) 
-                                    VALUES ('$namaPelanggan', '$teleponPelanggan', '$alamatPelanggan', '$buktiPelangganImg', '$totalAmount', '$itemNames', '$itemQuantities')";
-            $insertCustomerResult = mysqli_query($con, $insertCustomerQuery);
-
-            if ($insertCustomerResult) {
-                // Get the last inserted order ID
-                $orderID = mysqli_insert_id($con);
-
-                // Redirect to home page after successful order placement
-                header('Location: shopping-cart.php');
-                exit();
-            } else {
-                echo "Error placing order: " . mysqli_error($con);
-            }
+        if (empty($calculatedTotalAmount) || empty($itemNamesInput) || empty($itemQuantitiesInput)) {
+            header('Location: shopping-cart.php');
         } else {
-            echo "Error uploading file.";
+            // Move the uploaded file to the uploads folder
+            if (move_uploaded_file($buktiPelangganTmp, $buktiPelangganPath)) {
+                // Insert customer data into the database
+                $insertCustomerQuery = "INSERT INTO customer (namaPelanggan, teleponPelanggan, alamatPelanggan, buktiPelanggan, totalHarga, namaBarang, jumlahBarang) 
+                                    VALUES ('$namaPelanggan', '$teleponPelanggan', '$alamatPelanggan', '$buktiPelangganImg', '$totalAmount', '$itemNames', '$itemQuantities')";
+                $insertCustomerResult = mysqli_query($con, $insertCustomerQuery);
+
+                if ($insertCustomerResult) {
+                    // Get the last inserted order ID
+                    $orderID = mysqli_insert_id($con);
+
+                    // Redirect to home page after successful order placement
+                    header('Location: shopping-cart.php');
+                    exit();
+                } else {
+                    echo "Error placing order: " . mysqli_error($con);
+                }
+            } else {
+                echo "Error uploading file.";
+            }
         }
     } else {
         echo "Invalid file format. Only JPG, JPEG, JFIF, and PNG files are allowed.";

@@ -21,11 +21,6 @@ window.onclick = function (event) {
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
 const popoverList = [...popoverTriggerList].map((popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl));
 
-// WYSIWYG Ckeditor
-ClassicEditor.create(document.querySelector("#detail")).catch((error) => {
-  console.error(error);
-});
-
 // cart
 function addToCart(productId) {
   // Check if local storage is supported

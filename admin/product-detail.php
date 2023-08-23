@@ -183,7 +183,12 @@ $queryCategory = mysqli_query($con, "SELECT * FROM category WHERE id!='$data[kat
 
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/37.1.0/classic/ckeditor.js"></script>
-    <script src="../js/script.js"></script>
+    <script>
+        // WYSIWYG Ckeditor
+        ClassicEditor.create(document.querySelector("#detail")).catch((error) => {
+            console.error(error);
+        });
+    </script>
 </body>
 
 </html>

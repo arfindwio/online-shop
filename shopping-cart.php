@@ -14,7 +14,7 @@
 <body>
     <?php require "./navbar.php"; ?>
 
-    <div class="alert alert-danger position-fixed text-center rounded-4 py-2 px-5" style="z-index: 99; top: 80px; left: 50%; transform: translateX(-50%);">test</div>
+    <!-- <div class="alert alert-danger position-fixed text-center rounded-4 py-2 px-5" style="z-index: 99; top: 80px; left: 50%; transform: translateX(-50%);">test</div> -->
 
 
     <div class="shopping-cart container py-5">
@@ -52,7 +52,7 @@
                         <h1 class="fw-bold">Shopping Cart</h1>
                         <p class="text-secondary fs-5 mt-3 ms-auto">items</p>
                     </div>
-                    <div class="shopping-cart__items" style="overflow: scroll; height: 65%;">
+                    <div class="shopping-cart__items" style="overflow: scroll; height: 35rem;">
 
 
                     </div>
@@ -78,9 +78,8 @@
                         <p class="fw-bold fs-5 mb-0 ms-auto" id="totalAmount">Rp. 0</p>
                     </div>
 
-                    <button type="submit" class="col-12 rounded-3 text-white bg-dark fs-4 py-1 mt-5" name="btn-pay">Confirm</button>
+                    <button type="submit" class="col-12 rounded-3 fs-4 py-1 mt-5" id="btn-pay-confirm" name="btn-pay">Confirm</button>
                 </div>
-
             </div>
         </form>
     </div>
@@ -94,6 +93,23 @@
         </div>
     </div>
     <script>
+        let confirmButton = document.querySelector('#btn-pay-confirm');
+
+        function updateConfirmButtonState() {
+            let cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+            if (cartData.length > 0) {
+                confirmButton.disabled = false;
+                confirmButton.classList.remove('bg-secondary-subtle', 'text-body-tertiary');
+                confirmButton.classList.add('bg-dark', 'text-white');
+            } else {
+                confirmButton.disabled = true;
+                confirmButton.classList.remove('bg-dark', 'text-white');
+                confirmButton.classList.add('bg-body-secondary', 'text-body-tertiary');
+            }
+        }
+        // Call this function to update the button state on page load and whenever cartData changes
+        updateConfirmButtonState();
+
         // Check if local storage is supported
         if (typeof(Storage) !== "undefined") {
             // Get the element to display the cart items
